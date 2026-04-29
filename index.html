@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jahid Hasan — Senior Android Developer</title>
+  <meta name="description" content="Jahid Hasan — Senior Android Developer with 5+ years of experience building scalable, high-performance mobile and wearable apps." />
+  <meta name="author" content="Jahid Hasan" />
+  <meta property="og:title" content="Jahid Hasan — Senior Android Developer" />
+  <meta property="og:description" content="5+ years building scalable, high-performance Android & WearOS apps." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f8f9fb;
+      --bg-card: #ffffff;
+      --border: #e6e8ec;
+      --border-soft: #eef0f4;
+      --text: #0f1115;
+      --text-muted: #5b6470;
+      --text-soft: #8a929d;
+      --accent: #0f1115;
+      --accent-soft: #1a73e8;
+      --highlight: #f1f3f7;
+      --shadow-sm: 0 1px 2px rgba(15, 17, 21, 0.04);
+      --shadow-md: 0 4px 14px rgba(15, 17, 21, 0.06);
+      --radius: 12px;
+      --radius-lg: 16px;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    code, .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      z-index: 100;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--text-soft);
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 96px 0 64px;
+    }
+
+    .hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      padding: 6px 12px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, #0f1115 0%, #5b6470 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero .role {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    .hero .bio {
+      max-width: 640px;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: var(--bg);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-soft);
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Section */
+    section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+      font-weight: 500;
+      margin-bottom: 12px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 48px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    .about p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .stat {
+      padding: 20px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+    }
+
+    .stat-num {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Experience timeline */
+    .timeline {
+      position: relative;
+    }
+
+    .job {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      padding: 32px 0;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .job:first-child { border-top: none; padding-top: 0; }
+
+    @media (max-width: 768px) {
+      .job { grid-template-columns: 1fr; gap: 12px; }
+    }
+
+    .job-period {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      font-family: 'JetBrains Mono', monospace;
+      padding-top: 4px;
+    }
+
+    .job-period .location {
+      display: block;
+      margin-top: 4px;
+      color: var(--text-soft);
+    }
+
+    .job-company {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    .job-title {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      margin-bottom: 16px;
+    }
+
+    .job ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-size: 0.96rem;
+    }
+
+    .job li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      background: var(--text);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    .job li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--text-muted);
+    }
+
+    .project-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-group {
+      padding: 24px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+    }
+
+    .skill-group h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+    }
+
+    /* Achievements */
+    .achievements {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .achievement {
+      padding: 24px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .achievement-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .achievement h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .achievement p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+      padding: 96px 0;
+    }
+
+    .contact h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .contact p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 0.85rem;
+    }
+
+    /* Apps showcase */
+    .app-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #fef9f0 0%, #fff5e6 100%);
+      border: 1px solid #f5e6d3;
+      border-radius: var(--radius-lg);
+      margin-bottom: 24px;
+    }
+
+    .app-showcase.reverse {
+      grid-template-columns: 1fr 1fr;
+      background: linear-gradient(135deg, #f4faf6 0%, #e9f5ed 100%);
+      border-color: #d4ead9;
+    }
+
+    .app-showcase.reverse .app-info { order: 2; }
+    .app-showcase.reverse .app-mockup { order: 1; }
+
+    @media (max-width: 768px) {
+      .app-showcase.reverse .app-info { order: 1; }
+      .app-showcase.reverse .app-mockup { order: 2; }
+    }
+
+    @media (max-width: 768px) {
+      .app-showcase { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
+    }
+
+    .app-info .app-badges {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-weight: 500;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge-live {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .badge-soon {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .badge-platform {
+      background: var(--bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .app-info h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      box-shadow: 0 6px 16px rgba(15, 17, 21, 0.12), 0 2px 4px rgba(15, 17, 21, 0.06);
+    }
+
+    .app-icon svg {
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+    }
+
+    .app-info .tagline {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    .app-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 24px;
+    }
+
+    .app-features li {
+      padding: 8px 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .app-features li::before {
+      content: "✓";
+      color: #22c55e;
+      font-weight: 700;
+    }
+
+    .app-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .app-mockup {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 480px;
+      gap: 16px;
+    }
+
+    .phone-frame {
+      width: 200px;
+      height: 420px;
+      background: #1f2937;
+      border-radius: 28px;
+      padding: 6px;
+      box-shadow: 0 24px 48px rgba(15, 17, 21, 0.18), 0 8px 16px rgba(15, 17, 21, 0.08);
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .phone-frame.left { transform: rotate(-4deg) translateX(8px); }
+    .phone-frame.right { transform: rotate(4deg) translateX(-8px); }
+    .phone-frame:hover { transform: rotate(0deg) translateX(0) scale(1.04); z-index: 2; }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #fdf6e8;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .app-mockup { min-height: 440px; }
+      .phone-frame.left, .phone-frame.right { transform: rotate(0); }
+      .phone-frame { width: 160px; height: 336px; }
+    }
+
+    /* ML section */
+    .ml-feature {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 48px;
+      background: linear-gradient(135deg, #0f1115 0%, #1f2937 100%);
+      border-radius: var(--radius-lg);
+      color: #fff;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .ml-feature { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
+    }
+
+    .ml-feature .ml-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 100px;
+      margin-bottom: 16px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .ml-feature h3 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .ml-feature .ml-desc {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+
+    .ml-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .ml-stat {
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+    }
+
+    .ml-stat-num {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #4ade80;
+      letter-spacing: -0.015em;
+    }
+
+    .ml-stat-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .ml-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .ml-tags .tag {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+    }
+
+    .ml-visual {
+      position: relative;
+      aspect-ratio: 1;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .ml-visual svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ml-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .ml-card {
+      padding: 24px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+    }
+
+    .ml-card h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ml-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="nav-logo">Jahid<span>.dev</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#ml">AI / ML</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="status-dot"></span>
+        Open to opportunities · Dhaka, Bangladesh (GMT+6)
+      </div>
+      <h1>
+        Hi, I'm Jahid Hasan.<br>
+        <span class="gradient">I build mobile apps that<br>perform under pressure.</span>
+      </h1>
+      <p class="role">Senior Engineer @ Pinwheel · Mobile · Backend · ML · Product</p>
+      <p class="bio">
+        I started in mobile — shipping scalable Android and WearOS apps with offline-first
+        functionality and tight performance budgets — and have since grown across the stack:
+        backend (TypeScript / NestJS), applied machine learning (CNN-based computer vision
+        and speech-to-text systems), AI-assisted development workflows with Claude, and
+        product decisions. I also ship my own apps on the Play Store. Generalist by output,
+        specialist where it counts.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          Get in touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://github.com/naiem" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.7-5.5 6 .5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-label">// About</div>
+      <h2 class="section-title">A bit about me.</h2>
+      <div class="about-grid">
+        <div>
+          <p>
+            I'm a senior engineer based in Dhaka, currently working at <strong style="color: var(--text)">Pinwheel</strong>
+            (Austin, USA) where I build wearable experiences for tens of thousands of users — and
+            increasingly contribute beyond mobile into backend, AI tooling, and product.
+          </p>
+          <p>
+            On the mobile side, my work lives at the edge of what hardware can do — squeezing
+            battery life out of wearables, designing motion algorithms from raw accelerometer data,
+            and making apps work offline in remote areas with no signal. On the backend, I work in
+            <strong style="color: var(--text)">TypeScript with NestJS</strong> supporting the Pinwheel Home product.
+          </p>
+          <p>
+            I'm also driving <strong style="color: var(--text)">AI integration into our development lifecycle</strong> —
+            using Claude for peer code review and other tasks — and partnering closely with the
+            product team on feature design, requirements gathering, and ticket scoping.
+          </p>
+          <p>
+            Before Pinwheel, I led mobile development at <strong style="color: var(--text)">Monstarlab</strong>,
+            shipped Denmark's #1 podcast platform, and contributed to open-source Kotlin Multiplatform
+            tooling. I spoke at KotlinConf'23 and won MonstarHacks 2024.
+          </p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Years experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">28%</div>
+            <div class="stat-label">Retention boost</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">20%</div>
+            <div class="stat-label">Power efficiency gain</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Disciplines (mobile, backend, product)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-label">// Experience</div>
+      <h2 class="section-title">Where I've worked.</h2>
+
+      <div class="timeline">
+
+        <div class="job">
+          <div class="job-period">
+            Nov 2024 — Present
+            <span class="location">Austin, USA</span>
+          </div>
+          <div>
+            <div class="job-company">Pinwheel</div>
+            <div class="job-title">Senior Engineer · Mobile, Backend & Product</div>
+            <ul>
+              <li><strong>Owned architecture and development</strong> of 5+ mission-critical Watch applications (Launcher, Contacts, Messenger) using Jetpack Compose and MVI, supporting tens of thousands of active users on highly constrained wearable hardware.</li>
+              <li><strong>Led system-wide performance and battery optimization</strong>, resolving 6+ cross-cutting bottlenecks across sensors, networking, location, and background execution — improving power efficiency by up to <strong>20%</strong> and extending daily battery life by 2–3 hours.</li>
+              <li>Designed and implemented a custom <strong>"Raise to Wake" motion algorithm</strong> using accelerometer data, achieving <strong>&gt;95% accuracy</strong> and reducing false activations by ~40%.</li>
+              <li>Re-engineered location tracking with <strong>manual NMEA-based GPS parsing</strong> and motion-aware throttling, improving reliability by ~50%.</li>
+              <li>Expanded into <strong>backend development</strong> in <strong>TypeScript / NestJS</strong>, supporting the Pinwheel Home product alongside mobile work.</li>
+              <li>Drove <strong>AI integration into the development lifecycle</strong> — using Claude for automated peer code review and engineering productivity workflows.</li>
+              <li>Contributed to <strong>product and project management</strong>: shaping product decisions, partnering with the product team on requirements, designing features, and writing engineering tickets.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-period">
+            Dec 2021 — Oct 2024
+            <span class="location">Remote</span>
+          </div>
+          <div>
+            <div class="job-company">Monstarlab</div>
+            <div class="job-title">Mobile Engineer II</div>
+            <ul>
+              <li>Led app development for Denmark's top podcast platform <strong>24syv (Berlingske Media)</strong>, improving functionality with ExoPlayer, boosting user retention by <strong>28%</strong> and reducing crash rates by 16%.</li>
+              <li>Built an attendance and meal tracker using <strong>Kotlin Multiplatform</strong>, reducing food waste by 30% across Android, iOS, and WearOS.</li>
+              <li>Contributed to an open-source <strong>Kotlin Multiplatform project template</strong> with Compose Multiplatform, Ktor, Koin, and Room.</li>
+              <li>Enhanced the Bhumijo app with Jetpack Compose, integrated payment gateways, and automated deployment workflows — reducing errors by 20%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-period">
+            Feb 2021 — Nov 2021
+            <span class="location">Remote</span>
+          </div>
+          <div>
+            <div class="job-company">Field Information Solutions GmbH</div>
+            <div class="job-title">Junior Android Engineer</div>
+            <ul>
+              <li>Developed coffee farm mapping, push notifications, and RO Assessments for <strong>NKG Bloom Uganda</strong> and <strong>Bloom Kenya</strong>.</li>
+              <li>Implemented camera functionality for capturing farm and collection imagery.</li>
+              <li>Enabled <strong>full offline functionality</strong> with data sync on connectivity — critical for remote-area deployments.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-period">
+            Jul 2020 — Oct 2020
+            <span class="location">Remote · USA</span>
+          </div>
+          <div>
+            <div class="job-company">MDacne</div>
+            <div class="job-title">Android Developer & QA Engineer</div>
+            <ul>
+              <li>Developed core features including analysis report and treatment routine.</li>
+              <li>Identified and resolved <strong>60+ critical product issues</strong>, reducing customer support tickets by 40% and increasing positive reviews by 25%.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="container">
+      <div class="section-label">// Apps on Play Store</div>
+      <h2 class="section-title">Personal apps, shipping to real users.</h2>
+
+      <div class="app-showcase">
+        <div class="app-info">
+          <div class="app-badges">
+            <span class="badge badge-live">● Live on Google Play</span>
+            <span class="badge badge-soon">App Store · Coming Soon</span>
+            <span class="badge badge-platform">Android · iOS</span>
+          </div>
+          <h3>LittleStars 🌟</h3>
+          <p class="tagline">
+            The ultimate kids habit builder & chore app — making everyday routines fun
+            through rewards, photo verification, and room-based task tracking.
+          </p>
+
+          <ul class="app-features">
+            <li>Built end-to-end with <strong style="color: var(--text)">Kotlin Multiplatform</strong> for shared Android + iOS codebase</li>
+            <li>Interactive chore tracker organized by rooms — Bedroom, Kitchen, Study Room</li>
+            <li>Photo verification so parents can validate completed tasks</li>
+            <li>Custom reward system — screen time, treats, family activities</li>
+            <li>Multiple child profiles with advanced scheduling</li>
+            <li>Privacy-first: no ads, no tracking, fully local data storage</li>
+          </ul>
+
+          <div class="app-tags">
+            <span class="tag">Kotlin Multiplatform</span>
+            <span class="tag">Compose Multiplatform</span>
+            <span class="tag">Android</span>
+            <span class="tag">iOS</span>
+            <span class="tag">Local Storage</span>
+            <span class="tag">CameraX</span>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=com.littlestars.app" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a.996.996 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.532-3.533l2.62 1.516a1 1 0 010 1.732l-2.808 1.625-2.451-2.451 2.639-2.422zM5.864 2.658L16.802 8.99l-2.302 2.302L5.864 2.658z"/></svg>
+              View on Google Play
+            </a>
+          </div>
+        </div>
+
+        <div class="app-mockup" aria-hidden="true">
+          <!-- Home screen mockup -->
+          <div class="phone-frame left">
+            <div class="phone-screen">
+              <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;">
+                <!-- Background -->
+                <rect width="200" height="420" fill="#fdf6e8"/>
+                <!-- Status bar -->
+                <text x="14" y="16" font-family="Inter,sans-serif" font-size="8" fill="#1f2937" font-weight="600">11:44</text>
+                <circle cx="170" cy="14" r="3" fill="#22c55e"/>
+                <text x="176" y="17" font-family="Inter,sans-serif" font-size="6" fill="#fff" font-weight="700">100</text>
+
+                <!-- Header -->
+                <text x="14" y="50" font-family="Inter,sans-serif" font-size="18" font-weight="800" fill="#1f1f1f">Hi, Helper!</text>
+                <text x="14" y="66" font-family="Inter,sans-serif" font-size="9" fill="#6b6b6b">Which room needs help today?</text>
+                <!-- Stars badge -->
+                <rect x="156" y="36" width="34" height="20" rx="10" fill="#fef3c7"/>
+                <text x="166" y="50" font-family="Inter,sans-serif" font-size="9" fill="#92400e">★</text>
+                <text x="178" y="50" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#92400e">6</text>
+
+                <!-- Streak banner -->
+                <rect x="10" y="78" width="180" height="50" rx="12" fill="#fcd9c1"/>
+                <rect x="18" y="86" width="32" height="32" rx="8" fill="#fff"/>
+                <text x="34" y="108" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">🔥</text>
+                <text x="56" y="98" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#1f1f1f">4-day streak</text>
+                <text x="56" y="110" font-family="Inter,sans-serif" font-size="7" fill="#6b6b6b">Come back tomorrow.</text>
+                <!-- Streak segments -->
+                <rect x="56" y="116" width="14" height="4" rx="2" fill="#ea7c4f"/>
+                <rect x="72" y="116" width="14" height="4" rx="2" fill="#ea7c4f"/>
+                <rect x="88" y="116" width="14" height="4" rx="2" fill="#ea7c4f"/>
+                <rect x="104" y="116" width="14" height="4" rx="2" fill="#ea7c4f"/>
+                <rect x="120" y="116" width="14" height="4" rx="2" fill="#f3c2a4"/>
+                <rect x="136" y="116" width="14" height="4" rx="2" fill="#f3c2a4"/>
+                <rect x="152" y="116" width="14" height="4" rx="2" fill="#f3c2a4"/>
+
+                <!-- CHOOSE A ROOM -->
+                <text x="14" y="148" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#a1a1a1" letter-spacing="1">CHOOSE A ROOM</text>
+
+                <!-- Bedroom card -->
+                <rect x="10" y="158" width="86" height="100" rx="14" fill="#fde9a3"/>
+                <rect x="18" y="166" width="70" height="50" rx="10" fill="#fff5cc"/>
+                <text x="53" y="200" font-size="20" text-anchor="middle">🛏️</text>
+                <text x="18" y="232" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#92400e">Bedroom</text>
+                <text x="18" y="246" font-family="Inter,sans-serif" font-size="7" fill="#92400e">★ 6/6</text>
+                <rect x="18" y="250" width="70" height="3" rx="1.5" fill="#f5b500"/>
+
+                <!-- Kitchen card -->
+                <rect x="104" y="158" width="86" height="100" rx="14" fill="#fcd5c5"/>
+                <rect x="112" y="166" width="70" height="50" rx="10" fill="#fde7da"/>
+                <text x="147" y="200" font-size="20" text-anchor="middle">🍳</text>
+                <text x="112" y="232" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#a13e1e">Kitchen</text>
+                <text x="112" y="246" font-family="Inter,sans-serif" font-size="7" fill="#a13e1e">★ 0/6</text>
+                <rect x="112" y="250" width="70" height="3" rx="1.5" fill="#f5d8c8"/>
+
+                <!-- Bathroom card -->
+                <rect x="10" y="266" width="86" height="100" rx="14" fill="#c5ebd6"/>
+                <rect x="18" y="274" width="70" height="50" rx="10" fill="#defbe7"/>
+                <text x="53" y="308" font-size="20" text-anchor="middle">🛁</text>
+                <text x="18" y="340" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#1f5440">Bathroom</text>
+                <text x="18" y="354" font-family="Inter,sans-serif" font-size="7" fill="#1f5440">★ 0/6</text>
+                <rect x="18" y="358" width="70" height="3" rx="1.5" fill="#a4dabc"/>
+
+                <!-- Study Room card -->
+                <rect x="104" y="266" width="86" height="100" rx="14" fill="#d6c8eb"/>
+                <rect x="112" y="274" width="70" height="50" rx="10" fill="#e7defb"/>
+                <text x="147" y="308" font-size="20" text-anchor="middle">📚</text>
+                <text x="112" y="340" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#3b256e">Study Room</text>
+                <text x="112" y="354" font-family="Inter,sans-serif" font-size="7" fill="#3b256e">★ 0/6</text>
+                <rect x="112" y="358" width="70" height="3" rx="1.5" fill="#b9aada"/>
+
+                <!-- Bottom nav -->
+                <rect x="30" y="382" width="140" height="28" rx="14" fill="#fff"/>
+                <rect x="34" y="386" width="60" height="20" rx="10" fill="#ea7c4f"/>
+                <text x="64" y="399" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">Home</text>
+                <text x="124" y="400" font-size="11" text-anchor="middle">⭐</text>
+                <text x="156" y="400" font-size="11" text-anchor="middle">🔒</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Rewards screen mockup -->
+          <div class="phone-frame right">
+            <div class="phone-screen">
+              <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;">
+                <rect width="200" height="420" fill="#fdf6e8"/>
+                <text x="14" y="16" font-family="Inter,sans-serif" font-size="8" fill="#1f2937" font-weight="600">11:44</text>
+                <circle cx="170" cy="14" r="3" fill="#22c55e"/>
+                <text x="176" y="17" font-family="Inter,sans-serif" font-size="6" fill="#fff" font-weight="700">100</text>
+
+                <!-- Header -->
+                <text x="14" y="42" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#a1a1a1" letter-spacing="1">REWARDS</text>
+                <text x="14" y="62" font-family="Inter,sans-serif" font-size="16" font-weight="800" fill="#1f1f1f">Good work</text>
+                <text x="14" y="78" font-family="Inter,sans-serif" font-size="16" font-weight="800" fill="#1f1f1f">pays off.</text>
+                <rect x="156" y="44" width="34" height="20" rx="10" fill="#fef3c7"/>
+                <text x="166" y="58" font-family="Inter,sans-serif" font-size="9" fill="#92400e">★</text>
+                <text x="178" y="58" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#92400e">3</text>
+
+                <!-- Big Goal card -->
+                <rect x="10" y="92" width="180" height="86" rx="14" fill="#fde9a3"/>
+                <text x="18" y="108" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#c98a1c" letter-spacing="0.5">BIG GOAL</text>
+                <rect x="18" y="116" width="32" height="32" rx="8" fill="#fff"/>
+                <text x="34" y="138" font-size="16" text-anchor="middle">🎁</text>
+                <text x="56" y="128" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#1f1f1f">Trip to the Park</text>
+                <text x="56" y="140" font-family="Inter,sans-serif" font-size="7" fill="#6b6b6b">3 / 20 stars collected</text>
+                <rect x="18" y="158" width="164" height="6" rx="3" fill="#fef0c2"/>
+                <rect x="18" y="158" width="26" height="6" rx="3" fill="#f5b500"/>
+
+                <!-- Tab bar -->
+                <rect x="10" y="194" width="180" height="22" rx="11" fill="#ede4d2"/>
+                <rect x="14" y="198" width="56" height="14" rx="7" fill="#fff"/>
+                <text x="32" y="208" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#1f1f1f">Videos</text>
+                <rect x="50" y="200" width="18" height="10" rx="3" fill="#ea7c4f"/>
+                <text x="59" y="208" font-family="Inter,sans-serif" font-size="6" font-weight="700" fill="#fff" text-anchor="middle">NEW</text>
+                <text x="105" y="208" font-family="Inter,sans-serif" font-size="7" fill="#6b6b6b" text-anchor="middle">Treats</text>
+                <text x="160" y="208" font-family="Inter,sans-serif" font-size="7" fill="#6b6b6b" text-anchor="middle">Owned</text>
+
+                <!-- PARENT-PICKED VIDEOS -->
+                <text x="14" y="234" font-family="Inter,sans-serif" font-size="6" font-weight="700" fill="#a1a1a1" letter-spacing="0.5">PARENT-PICKED VIDEOS</text>
+                <text x="186" y="234" font-family="Inter,sans-serif" font-size="6" fill="#a1a1a1" text-anchor="end">1 unlocked</text>
+                <text x="14" y="246" font-family="Inter,sans-serif" font-size="6" fill="#6b6b6b">Trade your stars for a video.</text>
+
+                <!-- Video card -->
+                <rect x="14" y="256" width="120" height="130" rx="12" fill="#fff"/>
+                <rect x="20" y="262" width="108" height="60" rx="8" fill="#f4a3b9"/>
+                <text x="74" y="298" font-size="14" text-anchor="middle">▶</text>
+                <text x="20" y="338" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#1f1f1f">Learn To Talk...</text>
+                <text x="20" y="350" font-family="Inter,sans-serif" font-size="6" fill="#6b6b6b">Ms Rachel - Toddler</text>
+                <text x="20" y="358" font-family="Inter,sans-serif" font-size="6" fill="#6b6b6b">Learning Videos</text>
+                <rect x="20" y="364" width="100" height="16" rx="8" fill="#7cc88f"/>
+                <text x="70" y="375" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">Watch Now</text>
+
+                <!-- Bottom nav -->
+                <rect x="30" y="392" width="140" height="22" rx="11" fill="#fff"/>
+                <text x="48" y="406" font-size="9" text-anchor="middle">🏠</text>
+                <rect x="68" y="396" width="64" height="14" rx="7" fill="#ea7c4f"/>
+                <text x="82" y="406" font-size="8">⭐</text>
+                <text x="115" y="405" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">Rewards</text>
+                <text x="156" y="406" font-size="9" text-anchor="middle">🔒</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DataShield showcase -->
+      <div class="app-showcase reverse">
+        <div class="app-mockup" aria-hidden="true">
+          <!-- DataSaver Home screen mockup -->
+          <div class="phone-frame left">
+            <div class="phone-screen">
+              <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;">
+                <rect width="200" height="420" fill="#f4f6f4"/>
+                <text x="14" y="16" font-family="Inter,sans-serif" font-size="8" fill="#1f2937" font-weight="600">6:29</text>
+                <circle cx="170" cy="14" r="3" fill="#22c55e"/>
+                <text x="176" y="17" font-family="Inter,sans-serif" font-size="6" fill="#fff" font-weight="700">100</text>
+
+                <!-- Header -->
+                <text x="100" y="44" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#1f1f1f" text-anchor="middle">DataSaver</text>
+                <text x="100" y="56" font-family="JetBrains Mono,monospace" font-size="6" fill="#a1a1a1" text-anchor="middle" letter-spacing="0.5">LOCAL · ZERO PERMISSIONS</text>
+                <text x="184" y="50" font-size="10" text-anchor="middle">⚙</text>
+
+                <!-- Status card -->
+                <rect x="10" y="68" width="180" height="118" rx="14" fill="#fff"/>
+                <rect x="18" y="76" width="58" height="14" rx="7" fill="#fee2e2"/>
+                <text x="22" y="86" font-size="6">🛡</text>
+                <text x="32" y="86" font-family="JetBrains Mono,monospace" font-size="6" font-weight="700" fill="#dc2626" letter-spacing="0.3">INACTIVE</text>
+                <text x="178" y="86" font-family="JetBrains Mono,monospace" font-size="6" fill="#a1a1a1" text-anchor="end">v1.0.0</text>
+
+                <text x="18" y="108" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="#1f1f1f">Firewall disabled</text>
+                <text x="18" y="124" font-family="Inter,sans-serif" font-size="6" fill="#6b6b6b">Traffic is not being filtered.</text>
+                <text x="18" y="132" font-family="Inter,sans-serif" font-size="6" fill="#6b6b6b">Apps can access network freely.</text>
+
+                <!-- Enable button -->
+                <rect x="18" y="146" width="164" height="28" rx="14" fill="#22c55e"/>
+                <text x="76" y="164" font-size="7" fill="#fff">▶</text>
+                <text x="105" y="164" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#fff">Enable Protection</text>
+
+                <!-- Stats cards -->
+                <rect x="10" y="194" width="86" height="50" rx="12" fill="#fff"/>
+                <text x="18" y="208" font-family="JetBrains Mono,monospace" font-size="6" font-weight="700" fill="#a1a1a1" letter-spacing="0.5">BLOCKED</text>
+                <text x="18" y="232" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="#1f1f1f">0 B</text>
+
+                <rect x="104" y="194" width="86" height="50" rx="12" fill="#fff"/>
+                <text x="112" y="208" font-family="JetBrains Mono,monospace" font-size="6" font-weight="700" fill="#a1a1a1" letter-spacing="0.5">ALLOWED</text>
+                <text x="112" y="232" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="#22c55e">0 B</text>
+
+                <!-- Chart card -->
+                <rect x="10" y="252" width="180" height="130" rx="12" fill="#fff"/>
+                <text x="18" y="268" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#1f1f1f">Traffic blocked · last 24h</text>
+                <text x="182" y="268" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="#1f1f1f" text-anchor="end">Week ▾</text>
+                <text x="18" y="278" font-family="JetBrains Mono,monospace" font-size="5" fill="#a1a1a1" letter-spacing="0.3">MB/HOUR · peak 3.1 @ 08:00</text>
+
+                <!-- Bars -->
+                <rect x="20"  y="350" width="4" height="6"  rx="1" fill="#bfe3c8"/>
+                <rect x="28"  y="350" width="4" height="6"  rx="1" fill="#bfe3c8"/>
+                <rect x="36"  y="348" width="4" height="8"  rx="1" fill="#bfe3c8"/>
+                <rect x="44"  y="350" width="4" height="6"  rx="1" fill="#bfe3c8"/>
+                <rect x="52"  y="348" width="4" height="8"  rx="1" fill="#bfe3c8"/>
+                <rect x="60"  y="346" width="4" height="10" rx="1" fill="#bfe3c8"/>
+                <rect x="68"  y="335" width="4" height="21" rx="1" fill="#a4d9b1"/>
+                <rect x="76"  y="320" width="4" height="36" rx="1" fill="#a4d9b1"/>
+                <rect x="84"  y="296" width="4" height="60" rx="1" fill="#22c55e"/>
+                <rect x="92"  y="316" width="4" height="40" rx="1" fill="#a4d9b1"/>
+                <rect x="100" y="324" width="4" height="32" rx="1" fill="#a4d9b1"/>
+                <rect x="108" y="316" width="4" height="40" rx="1" fill="#a4d9b1"/>
+                <rect x="116" y="328" width="4" height="28" rx="1" fill="#bfe3c8"/>
+                <rect x="124" y="324" width="4" height="32" rx="1" fill="#a4d9b1"/>
+                <rect x="132" y="328" width="4" height="28" rx="1" fill="#bfe3c8"/>
+                <rect x="140" y="338" width="4" height="18" rx="1" fill="#bfe3c8"/>
+                <rect x="148" y="340" width="4" height="16" rx="1" fill="#bfe3c8"/>
+                <rect x="156" y="340" width="4" height="16" rx="1" fill="#bfe3c8"/>
+                <rect x="164" y="346" width="4" height="10" rx="1" fill="#bfe3c8"/>
+                <rect x="172" y="348" width="4" height="8"  rx="1" fill="#bfe3c8"/>
+                <rect x="180" y="350" width="4" height="6"  rx="1" fill="#bfe3c8"/>
+
+                <text x="20"  y="372" font-family="JetBrains Mono,monospace" font-size="5" fill="#a1a1a1">00</text>
+                <text x="68"  y="372" font-family="JetBrains Mono,monospace" font-size="5" fill="#a1a1a1">06</text>
+                <text x="116" y="372" font-family="JetBrains Mono,monospace" font-size="5" fill="#a1a1a1">12</text>
+                <text x="156" y="372" font-family="JetBrains Mono,monospace" font-size="5" fill="#a1a1a1">18</text>
+                <text x="180" y="372" font-family="JetBrains Mono,monospace" font-size="5" fill="#a1a1a1">23</text>
+
+                <!-- Bottom nav -->
+                <rect x="10" y="392" width="180" height="22" rx="11" fill="#fff"/>
+                <rect x="14" y="396" width="40" height="14" rx="7" fill="#dcfce7"/>
+                <text x="34" y="406" font-size="8" text-anchor="middle">🛡</text>
+                <text x="78" y="406" font-size="7" fill="#a1a1a1" text-anchor="middle">▦</text>
+                <text x="120" y="406" font-size="7" fill="#a1a1a1" text-anchor="middle">⚡</text>
+                <text x="166" y="406" font-size="7" fill="#a1a1a1" text-anchor="middle">⏱</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- DataSaver Rules screen mockup -->
+          <div class="phone-frame right">
+            <div class="phone-screen">
+              <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;">
+                <rect width="200" height="420" fill="#f4f6f4"/>
+                <text x="14" y="16" font-family="Inter,sans-serif" font-size="8" fill="#1f2937" font-weight="600">6:31</text>
+                <circle cx="170" cy="14" r="3" fill="#22c55e"/>
+                <text x="176" y="17" font-family="Inter,sans-serif" font-size="6" fill="#fff" font-weight="700">100</text>
+
+                <!-- Header -->
+                <text x="14" y="48" font-family="Inter,sans-serif" font-size="18" font-weight="800" fill="#1f1f1f">Rules</text>
+                <text x="14" y="62" font-family="Inter,sans-serif" font-size="6" fill="#6b6b6b">Set-and-forget profiles that</text>
+                <text x="14" y="71" font-family="Inter,sans-serif" font-size="6" fill="#6b6b6b">switch by time or context</text>
+                <rect x="142" y="38" width="48" height="20" rx="10" fill="#dcfce7"/>
+                <text x="148" y="51" font-size="9" fill="#22c55e">+</text>
+                <text x="158" y="51" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#22c55e">New</text>
+
+                <!-- Sleep rule (active) -->
+                <rect x="10" y="86" width="180" height="78" rx="12" fill="#fff" stroke="#22c55e" stroke-width="1.2"/>
+                <rect x="18" y="94" width="20" height="20" rx="6" fill="#dcfce7"/>
+                <text x="28" y="109" font-size="11" text-anchor="middle">🌙</text>
+                <text x="44" y="106" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#1f1f1f">Sleep</text>
+                <rect x="160" y="94" width="22" height="12" rx="6" fill="#22c55e"/>
+                <circle cx="176" cy="100" r="4" fill="#fff"/>
+                <text x="44" y="124" font-family="JetBrains Mono,monospace" font-size="6.5" fill="#22c55e" font-weight="700">23:00 - 07:00</text>
+                <text x="44" y="138" font-family="Inter,sans-serif" font-size="6.5" fill="#1f1f1f">Block all apps except</text>
+                <text x="44" y="146" font-family="Inter,sans-serif" font-size="6.5" fill="#1f1f1f">Messages &amp; Alarm</text>
+                <text x="44" y="158" font-family="JetBrains Mono,monospace" font-size="5.5" fill="#a1a1a1">▦ 42 apps scoped</text>
+
+                <!-- Deep Work rule (inactive) -->
+                <rect x="10" y="172" width="180" height="78" rx="12" fill="#fff"/>
+                <rect x="18" y="180" width="20" height="20" rx="6" fill="#f4f4f4"/>
+                <text x="28" y="195" font-size="9" text-anchor="middle">💼</text>
+                <text x="44" y="192" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#1f1f1f">Deep Work</text>
+                <rect x="160" y="180" width="22" height="12" rx="6" fill="#d4d4d4"/>
+                <circle cx="166" cy="186" r="4" fill="#fff"/>
+                <text x="44" y="210" font-family="JetBrains Mono,monospace" font-size="6" fill="#a1a1a1">Mon-Fri · 9:00 - 12:00</text>
+                <text x="44" y="224" font-family="Inter,sans-serif" font-size="6.5" fill="#1f1f1f">Only work apps allowed</text>
+                <text x="44" y="244" font-family="JetBrains Mono,monospace" font-size="5.5" fill="#a1a1a1">▦ 9 apps scoped</text>
+
+                <!-- Roaming rule (inactive) -->
+                <rect x="10" y="258" width="180" height="78" rx="12" fill="#fff"/>
+                <rect x="18" y="266" width="20" height="20" rx="6" fill="#f4f4f4"/>
+                <text x="28" y="281" font-size="9" text-anchor="middle">📡</text>
+                <text x="44" y="278" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#1f1f1f">Roaming</text>
+                <rect x="160" y="266" width="22" height="12" rx="6" fill="#d4d4d4"/>
+                <circle cx="166" cy="272" r="4" fill="#fff"/>
+                <text x="44" y="296" font-family="JetBrains Mono,monospace" font-size="6" fill="#a1a1a1">When on mobile data abroad</text>
+                <text x="44" y="310" font-family="Inter,sans-serif" font-size="6.5" fill="#1f1f1f">Block background data</text>
+                <text x="44" y="330" font-family="JetBrains Mono,monospace" font-size="5.5" fill="#a1a1a1">▦ 54 apps scoped</text>
+
+                <!-- Add rule -->
+                <rect x="10" y="344" width="180" height="40" rx="12" fill="#fff" stroke="#e5e7eb" stroke-dasharray="3,3"/>
+                <text x="22" y="367" font-size="11" fill="#a1a1a1">+</text>
+                <text x="36" y="362" font-family="Inter,sans-serif" font-size="6.5" fill="#1f1f1f">Build your own. Trigger on</text>
+                <text x="36" y="372" font-family="Inter,sans-serif" font-size="6.5" fill="#1f1f1f">time, Wi-Fi, battery, roaming.</text>
+
+                <!-- Bottom nav -->
+                <rect x="10" y="392" width="180" height="22" rx="11" fill="#fff"/>
+                <text x="34" y="406" font-size="7" fill="#a1a1a1" text-anchor="middle">🛡</text>
+                <text x="78" y="406" font-size="7" fill="#a1a1a1" text-anchor="middle">▦</text>
+                <text x="120" y="406" font-size="7" fill="#a1a1a1" text-anchor="middle">⚡</text>
+                <rect x="148" y="396" width="38" height="14" rx="7" fill="#dcfce7"/>
+                <text x="167" y="406" font-size="8" fill="#22c55e" text-anchor="middle">⏱</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-info">
+          <div class="app-badges">
+            <span class="badge badge-live">● Live on Google Play</span>
+            <span class="badge badge-platform">Android</span>
+            <span class="badge badge-platform">v1.0.0</span>
+          </div>
+          <h3>
+            <span class="app-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                <defs>
+                  <clipPath id="shieldClipDS">
+                    <path d="M32 4 L56 12 L56 30 C56 44 46 54 32 60 C18 54 8 44 8 30 L8 12 Z"></path>
+                  </clipPath>
+                </defs>
+                <path d="M32 4 L56 12 L56 30 C56 44 46 54 32 60 C18 54 8 44 8 30 L8 12 Z" fill="#0E1311"></path>
+                <g clip-path="url(#shieldClipDS)">
+                  <rect x="0" y="14" width="64" height="2.4" rx="1.2" fill="#6EE7A3" opacity="0.28"></rect>
+                  <rect x="0" y="22" width="64" height="2.4" rx="1.2" fill="#6EE7A3" opacity="0.5"></rect>
+                  <rect x="0" y="30" width="22" height="2.4" rx="1.2" fill="#6EE7A3"></rect>
+                  <rect x="40" y="30" width="24" height="2.4" rx="1.2" fill="#6EE7A3" opacity="0.28"></rect>
+                  <rect x="0" y="38" width="64" height="2.4" rx="1.2" fill="#6EE7A3" opacity="0.5"></rect>
+                  <rect x="0" y="46" width="64" height="2.4" rx="1.2" fill="#6EE7A3" opacity="0.28"></rect>
+                  <rect x="28" y="26" width="2" height="10" rx="1" fill="#6EE7A3"></rect>
+                </g>
+                <path d="M32 4 L56 12 L56 30 C56 44 46 54 32 60 C18 54 8 44 8 30 L8 12 Z" fill="none" stroke="#6EE7A3" stroke-width="1.5" stroke-linejoin="round" opacity="0.9"></path>
+              </svg>
+            </span>
+            DataShield
+          </h3>
+          <p class="tagline">
+            The only <strong style="color: var(--text)">local firewall</strong> that can't spy on you. Take total
+            control of mobile data, extend battery life, and protect privacy — all on-device,
+            zero permissions.
+          </p>
+
+          <ul class="app-features">
+            <li><strong style="color: var(--text)">Smart local firewall</strong> — block any app from mobile data or Wi-Fi with a single tap</li>
+            <li><strong style="color: var(--text)">Set-and-forget Rules</strong> — Sleep, Deep Work, Roaming Shield profiles trigger by time, network, battery, or context</li>
+            <li>Real-time stats showing exactly which apps consume the most data</li>
+            <li>Roaming Shield instantly blocks heavy background data abroad to avoid surprise charges</li>
+            <li>Battery saver: blocks unnecessary background traffic to extend daily life</li>
+            <li><strong style="color: var(--text)">Privacy-first architecture</strong> — traffic data never leaves the device</li>
+          </ul>
+
+          <div class="app-tags">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Android VPN Service</span>
+            <span class="tag">Coroutines</span>
+            <span class="tag">Local-First</span>
+            <span class="tag">Material 3</span>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=com.orghasan.datasaver" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a.996.996 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.532-3.533l2.62 1.516a1 1 0 010 1.732l-2.808 1.625-2.451-2.451 2.639-2.422zM5.864 2.658L16.802 8.99l-2.302 2.302L5.864 2.658z"/></svg>
+              View on Google Play
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ml">
+    <div class="container">
+      <div class="section-label">// AI & Machine Learning</div>
+      <h2 class="section-title">Building with ML, not just on top of it.</h2>
+
+      <div class="ml-feature">
+        <div>
+          <div class="ml-badge">● Featured ML Project</div>
+          <h3>Communicator for the Deaf & Mute</h3>
+          <p class="ml-desc">
+            An end-to-end machine learning application designed to empower deaf and mute
+            individuals in education. Combines a custom-trained convolutional neural network
+            for sign-language recognition with real-time speech-to-text — turning natural
+            communication into a two-way bridge.
+          </p>
+
+          <div class="ml-stats">
+            <div class="ml-stat">
+              <div class="ml-stat-num">3,750</div>
+              <div class="ml-stat-label">Custom training images</div>
+            </div>
+            <div class="ml-stat">
+              <div class="ml-stat-num">VGG16</div>
+              <div class="ml-stat-label">CNN architecture</div>
+            </div>
+            <div class="ml-stat">
+              <div class="ml-stat-num">2-way</div>
+              <div class="ml-stat-label">Speech ↔ Sign translation</div>
+            </div>
+            <div class="ml-stat">
+              <div class="ml-stat-num">Realtime</div>
+              <div class="ml-stat-label">On-device inference</div>
+            </div>
+          </div>
+
+          <div class="ml-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">CNN (VGG16)</span>
+            <span class="tag">Keras</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Google Speech API</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Transfer Learning</span>
+          </div>
+        </div>
+
+        <div class="ml-visual">
+          <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4ade80"/>
+                <stop offset="100%" stop-color="#22c55e"/>
+              </linearGradient>
+            </defs>
+            <!-- Connections -->
+            <g stroke="rgba(74, 222, 128, 0.25)" stroke-width="1" fill="none">
+              <line x1="60" y1="80"  x2="160" y2="60"/>
+              <line x1="60" y1="80"  x2="160" y2="120"/>
+              <line x1="60" y1="80"  x2="160" y2="180"/>
+              <line x1="60" y1="160" x2="160" y2="60"/>
+              <line x1="60" y1="160" x2="160" y2="120"/>
+              <line x1="60" y1="160" x2="160" y2="180"/>
+              <line x1="60" y1="160" x2="160" y2="240"/>
+              <line x1="60" y1="240" x2="160" y2="120"/>
+              <line x1="60" y1="240" x2="160" y2="180"/>
+              <line x1="60" y1="240" x2="160" y2="240"/>
+              <line x1="160" y1="60"  x2="260" y2="120"/>
+              <line x1="160" y1="60"  x2="260" y2="200"/>
+              <line x1="160" y1="120" x2="260" y2="120"/>
+              <line x1="160" y1="120" x2="260" y2="200"/>
+              <line x1="160" y1="180" x2="260" y2="120"/>
+              <line x1="160" y1="180" x2="260" y2="200"/>
+              <line x1="160" y1="240" x2="260" y2="200"/>
+            </g>
+            <!-- Input layer -->
+            <circle cx="60"  cy="80"  r="10" fill="url(#nodeGrad)"/>
+            <circle cx="60"  cy="160" r="10" fill="url(#nodeGrad)"/>
+            <circle cx="60"  cy="240" r="10" fill="url(#nodeGrad)"/>
+            <!-- Hidden layer -->
+            <circle cx="160" cy="60"  r="10" fill="url(#nodeGrad)" opacity="0.85"/>
+            <circle cx="160" cy="120" r="10" fill="url(#nodeGrad)" opacity="0.85"/>
+            <circle cx="160" cy="180" r="10" fill="url(#nodeGrad)" opacity="0.85"/>
+            <circle cx="160" cy="240" r="10" fill="url(#nodeGrad)" opacity="0.85"/>
+            <!-- Output -->
+            <circle cx="260" cy="120" r="10" fill="url(#nodeGrad)" opacity="0.7"/>
+            <circle cx="260" cy="200" r="10" fill="url(#nodeGrad)" opacity="0.7"/>
+            <!-- Labels -->
+            <text x="60"  y="290" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="JetBrains Mono">Input</text>
+            <text x="160" y="290" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="JetBrains Mono">Hidden</text>
+            <text x="260" y="290" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="JetBrains Mono">Output</text>
+            <text x="160" y="30"  fill="#4ade80" font-size="13" text-anchor="middle" font-family="JetBrains Mono" font-weight="600">CNN · VGG16</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="ml-cards">
+        <div class="ml-card">
+          <h4>📊 Custom Dataset Engineering</h4>
+          <p>Curated, labeled, and augmented a 3,750-image dataset for sign language gestures — handling class balance, lighting variance, and background diversity for robust generalization.</p>
+        </div>
+        <div class="ml-card">
+          <h4>🧠 Transfer Learning with VGG16</h4>
+          <p>Fine-tuned VGG16 on top of ImageNet pre-trained weights, freezing early conv blocks and retraining the classifier head for sign recognition with high accuracy on a small dataset.</p>
+        </div>
+        <div class="ml-card">
+          <h4>📷 Real-time Computer Vision</h4>
+          <p>OpenCV pipeline for hand region detection, frame normalization, and live inference — feeding processed frames into the CNN for low-latency on-device gesture classification.</p>
+        </div>
+        <div class="ml-card">
+          <h4>🎙️ Speech ↔ Sign Bridge</h4>
+          <p>Two-way communication: Google Speech API converts spoken language to text, while sign-language gestures are recognized and translated back to text — enabling fluid conversation.</p>
+        </div>
+        <div class="ml-card">
+          <h4>🚀 Currently Driving AI at Pinwheel</h4>
+          <p>Beyond research projects, I'm actively integrating Claude into our engineering lifecycle — automating peer code review and accelerating engineering productivity.</p>
+        </div>
+        <div class="ml-card">
+          <h4>🎤 Speaker · KotlinConf '23</h4>
+          <p>Spoke at KotlinConf '23 on production mobile engineering — bridging applied ML, mobile platforms, and developer experience for a technical audience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-label">// Other Projects</div>
+      <h2 class="section-title">More things I've built.</h2>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-icon">⌚</div>
+          <h3>Pinwheel Watch Suite</h3>
+          <p>
+            Full suite of mission-critical wearable apps — Launcher, Contacts, Messenger —
+            supporting tens of thousands of active users on constrained hardware. Built with
+            Jetpack Compose and MVI.
+          </p>
+          <div class="tags">
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">WearOS</span>
+            <span class="tag">MVI</span>
+            <span class="tag">Kotlin</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">🎙️</div>
+          <h3>24syv — Podcast Platform</h3>
+          <p>
+            Denmark's top podcast app for Berlingske Media. Re-architected playback with
+            ExoPlayer, boosting retention by 28% and reducing crashes by 16%.
+          </p>
+          <div class="tags">
+            <span class="tag">Android</span>
+            <span class="tag">ExoPlayer</span>
+            <span class="tag">Crashlytics</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">🔄</div>
+          <h3>KMP Attendance Tracker</h3>
+          <p>
+            Cross-platform attendance and meal tracker built with Kotlin Multiplatform,
+            reducing company food waste by 30%. Ships on Android, iOS, and WearOS.
+          </p>
+          <div class="tags">
+            <span class="tag">KMP</span>
+            <span class="tag">Compose Multiplatform</span>
+            <span class="tag">Ktor</span>
+            <span class="tag">Koin</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">🏠</div>
+          <h3>Pinwheel Home (Backend)</h3>
+          <p>
+            Backend services supporting the Pinwheel Home product — built with TypeScript and
+            NestJS. Cross-functional work alongside mobile, designing APIs and shipping features
+            end-to-end.
+          </p>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">NestJS</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">REST</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-icon">🤖</div>
+          <h3>AI in the Dev Lifecycle</h3>
+          <p>
+            Driving AI integration into our engineering workflow at Pinwheel — using Claude
+            for automated peer code review and other repetitive engineering tasks to ship
+            faster with higher quality.
+          </p>
+          <div class="tags">
+            <span class="tag">Claude</span>
+            <span class="tag">Code Review</span>
+            <span class="tag">Dev Tooling</span>
+            <span class="tag">Automation</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-label">// Skills</div>
+      <h2 class="section-title">Tools of the trade.</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="skill-list">
+            <span class="skill">Kotlin</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">Java</span>
+            <span class="skill">Dart</span>
+            <span class="skill">Swift</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Platforms</h4>
+          <div class="skill-list">
+            <span class="skill">Android</span>
+            <span class="skill">Wear OS</span>
+            <span class="skill">Kotlin Multiplatform</span>
+            <span class="skill">Flutter</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">NestJS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Machine Learning</h4>
+          <div class="skill-list">
+            <span class="skill">Python</span>
+            <span class="skill">Keras</span>
+            <span class="skill">TensorFlow</span>
+            <span class="skill">CNN / VGG16</span>
+            <span class="skill">Transfer Learning</span>
+            <span class="skill">OpenCV</span>
+            <span class="skill">Computer Vision</span>
+            <span class="skill">Speech Recognition</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>AI & Productivity</h4>
+          <div class="skill-list">
+            <span class="skill">Claude</span>
+            <span class="skill">AI Code Review</span>
+            <span class="skill">Dev Workflow Automation</span>
+            <span class="skill">LLM Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Product & Process</h4>
+          <div class="skill-list">
+            <span class="skill">Requirements Gathering</span>
+            <span class="skill">Feature Design</span>
+            <span class="skill">Ticket Scoping</span>
+            <span class="skill">Cross-team Communication</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Architecture</h4>
+          <div class="skill-list">
+            <span class="skill">MVVM</span>
+            <span class="skill">MVI</span>
+            <span class="skill">Composable</span>
+            <span class="skill">Clean Architecture</span>
+            <span class="skill">SOLID</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>CI / CD</h4>
+          <div class="skill-list">
+            <span class="skill">GitHub Actions</span>
+            <span class="skill">Bitrise</span>
+            <span class="skill">Fastlane</span>
+            <span class="skill">Jenkins</span>
+            <span class="skill">Bitbucket</span>
+            <span class="skill">Git</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Testing</h4>
+          <div class="skill-list">
+            <span class="skill">JUnit</span>
+            <span class="skill">Mockito</span>
+            <span class="skill">MockK</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>SDKs & Libraries</h4>
+          <div class="skill-list">
+            <span class="skill">Jetpack Compose</span>
+            <span class="skill">Coroutines</span>
+            <span class="skill">Flow</span>
+            <span class="skill">Retrofit</span>
+            <span class="skill">Ktor</span>
+            <span class="skill">GraphQL</span>
+            <span class="skill">Room</span>
+            <span class="skill">Realm</span>
+            <span class="skill">Hilt</span>
+            <span class="skill">Koin</span>
+            <span class="skill">Dagger</span>
+            <span class="skill">Firebase</span>
+            <span class="skill">ExoPlayer</span>
+            <span class="skill">Google Maps</span>
+            <span class="skill">Google Cast</span>
+            <span class="skill">StreamChat</span>
+            <span class="skill">Mixpanel</span>
+            <span class="skill">Snowplow</span>
+            <span class="skill">Stripe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="container">
+      <div class="section-label">// Achievements</div>
+      <h2 class="section-title">Highlights.</h2>
+
+      <div class="achievements">
+        <div class="achievement">
+          <div class="achievement-icon">🏆</div>
+          <div>
+            <h4>Champion · MonstarHacks 2024 (Sports Edition)</h4>
+            <p>Won the company-wide hackathon, partnered with Amazon Web Services (AWS).</p>
+          </div>
+        </div>
+
+        <div class="achievement">
+          <div class="achievement-icon">🎤</div>
+          <div>
+            <h4>Speaker · KotlinConf '23</h4>
+            <p>Presented at KotlinConf'23 hosted at Brac University, Dhaka, Bangladesh.</p>
+          </div>
+        </div>
+
+        <div class="achievement">
+          <div class="achievement-icon">🎓</div>
+          <div>
+            <h4>B.Sc. Computer Science & Engineering</h4>
+            <p>North South University, Dhaka, Bangladesh · Apr 2016 – Dec 2020</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-label" style="text-align: center;">// Contact</div>
+      <h2>Let's build something.</h2>
+      <p>
+        I'm currently open to interesting opportunities — especially around mobile, wearables,
+        or anything where performance matters. Drop me a line.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:jhnaiem96@gmail.com" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          jhnaiem96@gmail.com
+        </a>
+        <a href="https://github.com/naiem" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.7-5.5 6 .5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          @naiem
+        </a>
+        <a href="tel:+8801521333609" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          +880 1521 333609
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      Built with care by Jahid Hasan · <span class="mono">© 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth reveal on scroll
+    const reveal = (el) => el.classList.add('visible');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          reveal(e.target);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section, .hero').forEach(s => {
+      s.classList.add('reveal');
+      observer.observe(s);
+    });
+  </script>
+</body>
+</html>
